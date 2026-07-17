@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #F5F1E8;
+  color: #16261F;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+:focus-visible {
+  outline: 2px solid #0F3D33;
+  outline-offset: 2px;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(22, 38, 31, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
