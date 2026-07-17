@@ -7,7 +7,8 @@ const STORE_NAME = "ga-app-files";
 async function uploadBuffer(buffer: Buffer, dir: string, filename: string, contentType: string) {
   const store = getStore(STORE_NAME);
   const key = `${dir}/${filename}`;
-  await store.set(key, buffer, { metadata: { contentType } });
+  const data = new Uint8Array(buffer).buffer;
+  await store.set(key, data, { metadata: { contentType } });
   // Netlify Blobs tidak kasih URL publik langsung (beda dengan Vercel Blob) —
   // filenya disajikan lewat route kita sendiri: app/api/files/[...path]/route.ts
   return `/api/files/${key}`;
